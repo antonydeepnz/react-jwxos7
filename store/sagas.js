@@ -1,4 +1,5 @@
 import { put, call, takeLatest, takeEvery } from 'redux-saga/effects'
+
 import { requestGenres, getGenres, getError } from './actions'
 import axios from 'axios'
 
@@ -10,8 +11,7 @@ export const GET_IMAGE = (link, width) => `https://image.tmdb.org/t/p/w${width}/
 
 const Axios = axios.create({
   baseURL: `${BASIC_URL}`,
-  timeout: 1000,
-  
+  timeout: 1000
 })
 
 export function* getGenre(){
