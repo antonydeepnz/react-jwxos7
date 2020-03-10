@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import { Provider, useSelector, useDispatch } from 'react-redux'
 import './style.css';
 
-import { getGenres, requestGenres } from './store/actions'
+import { requestGenres } from './store/actions'
 
 import store from './store/store'
 //https://material.io/resources/icons/?search=chevron&icon=chevron_right&style=baseline
