@@ -3,11 +3,14 @@ import createSagaMiddleware from 'redux-saga'
 import logger from 'redux-logger'
 
 import genres from './reducer'
+import request from './sagas'
 
 const reducer = combineReducers({genres})
 
 const SagaMiddleware = createSagaMiddleware()
 
-export default createStore (reducer, applyMiddleware(logger, SagaMiddleware))
+const store = createStore (reducer, applyMiddleware(logger, SagaMiddleware))
 
-//SagaMiddleware.run()
+SagaMiddleware.run(request)
+
+export default store

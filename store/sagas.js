@@ -1,4 +1,4 @@
-import { put, call, takeEvery } from 'redux-saga'
+import { put, call, takeLatest, takeEvery } from 'redux-saga/effects'
 import { getGenres, requestGenres } from './actions'
 import axios from 'axios'
 
@@ -14,17 +14,20 @@ const Axios = axios.create({
   
 })
 
-function* getGenres(){
+export function* getGenre(){
   try{
-    const res = yield call(Axios, action.payload)
+    const res = yield call(Axios.get,`genre/movie/list?${API_KEY}&language=ru-RU`)
     console.log(res)
+    yield put(getGenres(res.data));
+    console.log(res.data)
   } catch (e){
     yield console.log(e)
   }
 }
 
-function* request(){
-  yield takeEvery(requestGenres, getGenres)
+export default function* request(){
+  yield takeEvery(requestGenres, getGenre)
+  // yield [
+  //   getGenre()
+  // ]
 }
-
-export default request
