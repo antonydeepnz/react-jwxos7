@@ -4,7 +4,7 @@ import axios from 'axios'
 import { requestFilms, getFilms, getErrors } from './actionRequestActions'
 
 function* get_Films(){
-  const res = yield call() 
+  const res = yield call()
 }
 
 export default function* requestFilms(){
