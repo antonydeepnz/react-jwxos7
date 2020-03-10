@@ -13,7 +13,7 @@ const App = () => {
   return(
     <>
       {
-        genres.map(i => (<li>{i}</li>))
+        genres.map(i => (<li>{i.name}</li>))
       }
       <button onClick={() => dispatch(requestGenres())}>Click</button>
     </>

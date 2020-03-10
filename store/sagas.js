@@ -15,7 +15,7 @@ const Axios = axios.create({
 })
 
 export function* getGenre(){
-  try{
+  try {
     const res = yield call(Axios.get,`genre/movie/list?${API_KEY}&language=ru-RU`)
     console.log(res.data.genres)
     yield put(getGenres(res.data));
@@ -26,7 +26,4 @@ export function* getGenre(){
 
 export default function* request(){
   yield takeLatest(requestGenres, getGenre)
-  // yield [
-  //   getGenre()
-  // ]
 }

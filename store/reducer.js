@@ -8,8 +8,8 @@ const initialState = {
 
 export default handleActions(
   {
-    [getGenres]: (state, {payload}) => ({data: [...state, ...payload.genres]}),
-    [requestGenres]: (state) => ({...state})
+    [requestGenres]: (state) => ({...state}),
+    [getGenres]: (state, {payload}) => ({data: [...state.data, ...payload.genres]})
   },
   initialState
 )
