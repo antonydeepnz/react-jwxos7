@@ -4,7 +4,12 @@ import axios from 'axios'
 import { requestFilms, getFilms, getErrors } from './actionRequestActions'
 
 function* get_Films(){
-  const res = yield call()
+  try {
+    const res = yield call()
+    put(getFilms(res.data))
+  } catch (err){
+    yield put(getErrors(err))
+  }
 }
 
 export default function* requestFilms(){
