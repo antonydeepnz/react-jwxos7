@@ -6,10 +6,12 @@ import './style.css';
 import store from './store/store'
 
 const App = () => {
-  const data = useSelector(state = state.genres)
+  const genres = useSelector(state => state.genres.data)
   return(
     <>
-
+      {
+        genres.map(i => (<li>{i}</li>))
+      }
     </>
   )
 }

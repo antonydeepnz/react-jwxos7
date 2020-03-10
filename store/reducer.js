@@ -1,7 +1,7 @@
 import { handleActions } from 'redux-actions'
 
 const initialState = {
-  genres: ['qwewqr','ewrewr']
+  data: ['qwewqr','ewrewr']
 }
 
 export default handleActions(
