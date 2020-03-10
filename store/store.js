@@ -1,6 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import createSagaMiddleware from 'redux-saga'
-import logger from 'redux-logger'
+import { createLogger } from 'redux-logger'
 
 import genres from './reducer'
 import filmsReducer from './filmsReducer'
@@ -10,6 +10,8 @@ const reducer = combineReducers({
   genres, 
   filmsReducer
 })
+
+const logger = createLogger()
 
 const SagaMiddleware = createSagaMiddleware()
 

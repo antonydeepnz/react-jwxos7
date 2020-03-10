@@ -5,8 +5,8 @@ import { requestFilms, getFilms, getErrors } from './actionRequestActions'
 
 function* get_Films(){
   try {
-    const res = yield call()
-    put(getFilms(res.data))
+    const result = yield call()
+    put(getFilms(result.data))
   } catch (err){
     yield put(getErrors(err))
   }
