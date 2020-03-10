@@ -1,6 +1,7 @@
 import { createActions } from 'redux-actions'
 
-export const { getGenres, requestGenres } = createActions(
+export const { requestGenres, getGenres, getError } = createActions(
+  'REQUEST_GENRES',
   'GET_GENRES',
-  'REQUEST_GENRES'
+  'GET_ERROR'
 )

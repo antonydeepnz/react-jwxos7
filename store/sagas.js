@@ -1,5 +1,5 @@
 import { put, call, takeLatest, takeEvery } from 'redux-saga/effects'
-import { getGenres, requestGenres } from './actions'
+import { requestGenres, getGenres, getError } from './actions'
 import axios from 'axios'
 
 export const CORS_AVOID = 'https://cors-anywhere.herokuapp.com/' 
@@ -17,10 +17,9 @@ const Axios = axios.create({
 export function* getGenre(){
   try {
     const res = yield call(Axios.get,`genre/movie/list?${API_KEY}&language=ru-RU`)
-    console.log(res.data.genres)
     yield put(getGenres(res.data));
   } catch (err){
-    yield console.log(err)
+    yield put(getError(err))
   }
 }
 
