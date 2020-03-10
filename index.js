@@ -6,7 +6,7 @@ import './style.css';
 import { getGenres, requestGenres } from './store/actions'
 
 import store from './store/store'
-
+//https://material.io/resources/icons/?search=chevron&icon=chevron_right&style=baseline
 const App = () => {
   const genres = useSelector(state => state.genres.data)
   const dispatch = useDispatch()
