@@ -3,9 +3,13 @@ import createSagaMiddleware from 'redux-saga'
 import logger from 'redux-logger'
 
 import genres from './reducer'
+import filmsReducer from './filmsReducer'
 import request from './sagas'
 
-const reducer = combineReducers({genres})
+const reducer = combineReducers({
+  genres, 
+  filmsReducer
+})
 
 const SagaMiddleware = createSagaMiddleware()
 

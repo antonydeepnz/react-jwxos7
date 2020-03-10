@@ -10,8 +10,8 @@ const initialState = {
 export default handleActions(
   {
     [requestFilms]: (state) => ({...state}),
-    [getFilms]: (state) => ({...state}),
-    [getErrors]: (state) => ({...state}),
+    [getFilms]: (state, { payload }) => ({...state, data: [...payload.data]}),
+    [getErrors]: (state, { payload }) => ({...state, error: payload.error})
   },
   initialState
 )
