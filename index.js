@@ -12,23 +12,24 @@ import store from './store/store'
 
 const App = () => {
   const genres = useSelector(state => state.genres.data)
+  const films = useSelector(state => state.films.data)
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch(requestGenres())
     dispatch(requestFilms())
   }, [])
-
+  
   return(
     <>
       {
         genres.map(i => (<li key={i.id}>{i.name}</li>))
       }
-      
+      <button onClick={() => console.log(films)}>Click</button>
     </>
   )
 }
-//<button onClick={() => dispatch(requestGenres())}>Click</button>
+//
 
 render(
 <Provider store={store}>

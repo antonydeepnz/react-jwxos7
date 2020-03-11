@@ -15,15 +15,16 @@ const Axios = axios.create({
 })
 
 function* get_Films(){
-  const query = 'Matrix'
+  const query = 'Матрица'
   try {
     const result = yield call(Axios.get, `search/movie?${API_KEY}&language=ru-RU&query=${query}`)
+    console.log(result.data)
     put(getFilms(result.data))
   } catch (err){
     yield put(getErrors(err))
   }
 }
 
-export default function* requestFilms(){
-  yield takeLatest()
+export default function* request_Films(){
+  yield takeLatest(requestFilms, get_Films)
 }

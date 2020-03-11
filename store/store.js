@@ -7,8 +7,8 @@ import filmsReducer from './filmsReducer'
 import request from './sagas'
 
 const reducer = combineReducers({
-  genres, 
-  filmsReducer
+  genres: genres, 
+  films: filmsReducer
 })
 
 const logger = createLogger()

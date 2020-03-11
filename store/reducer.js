@@ -9,9 +9,9 @@ const initialState = {
 
 export default handleActions(
   {
-    [requestGenres]: (state) => ({...state}),
-    [getGenres]: (state, {payload}) => ({...state, data: [...payload.genres]}),
-    [getError]: (state, {payload}) => ({...state, error: payload.error})
+    [requestGenres]: ( state ) => ({...state}),
+    [getGenres]: ( state, { payload }) => ({...state, data: [...payload.genres]}),
+    [getError]: ( state, { payload }) => ({...state, error: payload.error})
   },
   initialState
 )
