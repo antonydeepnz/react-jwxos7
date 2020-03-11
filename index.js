@@ -25,7 +25,8 @@ const App = () => {
       {
         genres.map(i => (<li key={i.id}>{i.name}</li>))
       }
-      <button onClick={() => console.log(films)}>Click</button>
+      { console.log(films)}
+      <button onClick={() => dispatch(requestFilms())}>Click</button>
     </>
   )
 }
